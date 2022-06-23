@@ -1,15 +1,16 @@
-import { Header } from "./components/Headers"
-import Lesson from "./components/Lesson"
-import { Sidebar } from "./components/Sidebar"
-import VideoPlayer from "./components/VideoPlayer"
-import Event from "./pages/Event"
+import { ApolloProvider } from "@apollo/client"
+import { client } from "./lib/apollo"
+import Router from "./Router"
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
 
   return (
-    <div>
-      <Event />
-    </div>
+    <ApolloProvider client={client}>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+    </ApolloProvider>
   )
 }
 
